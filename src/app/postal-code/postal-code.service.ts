@@ -32,7 +32,7 @@ export class PostalCodeService implements IPostalCodeService{
       .set('postalcode', postalCode);
     return this.httpClient
       .get<IPostalCodeData>(
-        `${environment.baseUrl}${environment.geonamesApi}.geonames.org/postalCodeSearchJSON`,
+        `http://${environment.geonamesApi}.geonames.org/postalCodeSearchJSON`,
         { params: uriParams }
       )
       .pipe(
